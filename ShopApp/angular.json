@@ -25,7 +25,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": []
           },
@@ -121,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "ShopApp"
+  "defaultProject": "ShopApp",
+  "cli": {
+    "analytics": "a93d44b1-d53d-4a61-916f-55c1d28071b8"
+  }
 }
