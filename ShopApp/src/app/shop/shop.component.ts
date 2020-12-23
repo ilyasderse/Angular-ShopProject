@@ -20,10 +20,8 @@ export class ShopComponent{
 
 
   constructor(
-    private productRepository:ProductRepository,
-    private categoryRepository:CategoryRepository,
-    private cart:Cart,
-    private router:Router
+    private productRepository:ProductRepository
+    
     ) { }
 
   get pageNumbers() : number[] {
@@ -49,19 +47,9 @@ export class ShopComponent{
     return this.selectedProducts
               .slice(index,index+this.productPerPage);
   }
-  
-  get categories():Category[] {
-    return this.categoryRepository.getCategories();
+
+  getCategory(category:Category){
+    this.selectedCategory=category;
   }
 
-  changeCategory(newCategory?:Category) {
-    this.selectedCategory = newCategory;
-  }
-
-  addProductToCart(product:Product) {
-    this.cart.addItem(product);
-    this.router.navigateByUrl('/cart');
-
-  }
-  
 }
