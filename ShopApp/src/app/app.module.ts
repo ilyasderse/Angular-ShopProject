@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ShopComponent } from './shop/shop.component';
 import { CartDetailComponent } from './shop/cart-detail/cart-detail.component';
 import { CheckoutComponent } from './shop/checkout/checkout.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CheckoutComponent } from './shop/checkout/checkout.component';
       { path: 'shop',component:ShopComponent},
       { path: 'cart',component:CartDetailComponent},
       { path: 'checkout',component:CheckoutComponent},
+      { path: 'admin',loadChildren : () => import ('./admin/admin.module').then(m=>m.AdminModule)},
       { path: '**', redirectTo:"/shop"}
     ])
 
