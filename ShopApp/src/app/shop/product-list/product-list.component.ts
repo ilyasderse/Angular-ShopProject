@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cart } from 'src/app/model/cart.model';
@@ -11,6 +12,8 @@ import { Product } from 'src/app/model/product.model';
 export class ProductListComponent implements OnInit {
 
   @Input() products : Product[] = [];
+  selectedProduct:Product=null;
+
   constructor(private cart:Cart,
     private router:Router) { }
 
@@ -22,4 +25,11 @@ export class ProductListComponent implements OnInit {
     this.router.navigateByUrl('/cart');
   }
 
+  displayDetails(product:Product){
+    this.selectedProduct = product;
+  }
+
+  hideDetails(){
+    this.selectedProduct = null;
+  }
 }
